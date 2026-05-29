@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1920, 1080
@@ -79,7 +81,8 @@ d.text((tx + wpre, ty), hi, font=f_title, fill=ACCENT)
 
 # Subtitle
 d.text((MARGIN, 330), "Six SIEM dialects. One OCSF schema.", font=f_sub, fill=TEXT)
-d.text((MARGIN, 408), "Normalise alerts from six vendors into a single, schema-validated event model.",
+d.text((MARGIN, 408),
+       "Normalise alerts from six vendors into a single, schema-validated event model.",
        font=font(HELV, 34, 0), fill=MUTED)
 
 # divider
@@ -128,7 +131,8 @@ d.text((hub_x - 30, mid_y + 26), "parsers → mapper", font=font(MENLO, 22, 0), 
 card_w = W - MARGIN - card_x
 card_h = 350
 card_y = int(mid_y - card_h / 2)
-rounded([card_x, card_y, card_x + card_w, card_y + card_h], 18, fill=PANEL2, outline=ACCENT, width=2)
+rounded([card_x, card_y, card_x + card_w, card_y + card_h], 18,
+        fill=PANEL2, outline=ACCENT, width=2)
 
 pad = 40
 d.text((card_x + pad, card_y + 34), "OCSF Detection Finding", font=f_card_title, fill=TEXT)
@@ -140,7 +144,8 @@ pill = [card_x + pad, card_y + 150, card_x + pad + 372, card_y + 196]
 rounded(pill, 22, fill=(63, 185, 80, 38), outline=GREEN, width=2)
 d.text((card_x + pad + 22, card_y + 160), "✓  schema-validated", font=f_card_mono, fill=GREEN)
 
-fields = ["severity_id / severity", "finding_info + ATT&CK", "observables[]", "evidences[]", "enrichments[]"]
+fields = ["severity_id / severity", "finding_info + ATT&CK", "observables[]",
+          "evidences[]", "enrichments[]"]
 fy = card_y + 206
 for fld in fields:
     d.text((card_x + pad, fy), "•  " + fld, font=f_card_small, fill=MUTED)
@@ -148,7 +153,8 @@ for fld in fields:
 
 # --- bottom badges ---
 by = H - 86
-badges = [("OCSF 1.8.0", ACCENT), ("Python 3.12", TEXT), ("MIT", TEXT), ("▶ live browser demo", GREEN)]
+badges = [("OCSF 1.8.0", ACCENT), ("Python 3.12", TEXT), ("MIT", TEXT),
+          ("▶ live browser demo", GREEN)]
 bx = MARGIN
 for label, col in badges:
     bw = d.textlength(label, font=f_badge) + 44
@@ -161,7 +167,6 @@ uw = d.textlength(url, font=f_url)
 d.text((W - MARGIN - uw, by + 8), url, font=f_url, fill=ACCENT)
 
 out = "assets/linkedin-cover.png"
-import os
 os.makedirs("assets", exist_ok=True)
 img.save(out)
 img.save(os.path.expanduser("~/Desktop/siem-to-ocsf-linkedin-cover.png"))
