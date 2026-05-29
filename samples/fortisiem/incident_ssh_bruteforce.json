@@ -1,0 +1,23 @@
+{
+  "incidentId": "FSM-2026-44120",
+  "incidentTitle": "SSH brute force attack against Linux host",
+  "ruleId": "PH_RULE_SSH_BRUTE_FORCE",
+  "ruleName": "Excessive Failed SSH Logins",
+  "ruleDescription": "More than 50 failed SSH authentications from a single source within 5 minutes.",
+  "incidentSeverity": 9,
+  "incidentStatus": "Active",
+  "phEventCategory": "Security",
+  "eventType": "SSH_Authentication_Failure",
+  "incidentFirstSeen": 1779966000000,
+  "incidentLastSeen": 1779966300000,
+  "count": 78,
+  "srcIpAddr": "198.51.100.23",
+  "srcName": "unknown-ext",
+  "destIpAddr": "10.50.4.12",
+  "destName": "linux-bastion-01",
+  "destIpPort": 22,
+  "hostName": "linux-bastion-01",
+  "user": "root",
+  "attackTactic": "TA0006 - Credential Access",
+  "attackTechnique": "T1110.001 - Password Guessing"
+}

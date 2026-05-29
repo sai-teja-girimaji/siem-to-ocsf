@@ -1,0 +1,18 @@
+{
+  "SystemAlertId": "9f8e7d6c-5b4a-4392-8170-6a5b4c3d2e1f",
+  "AlertName": "Suspicious inbox forwarding rule created",
+  "AlertType": "MCAS_ANOMALY_DETECTION",
+  "Description": "A mailbox rule was created that forwards all incoming mail to an external address, a common business email compromise technique.",
+  "AlertSeverity": "Low",
+  "TimeGenerated": "2026-05-28T18:33:12Z",
+  "VendorName": "Microsoft",
+  "ProductName": "Microsoft Defender for Cloud Apps",
+  "ProviderName": "MCAS",
+  "Status": "New",
+  "CompromisedEntity": "j.santos@example.com",
+  "Tactics": ["Collection", "Exfiltration"],
+  "Techniques": ["T1114.003"],
+  "Entities": [
+    {"Type": "account", "Name": "j.santos", "UPNSuffix": "example.com"}
+  ]
+}

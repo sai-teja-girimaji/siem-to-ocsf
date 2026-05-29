@@ -1,0 +1,8 @@
+{
+  "name": "Broken Cortex record (missing alert_id)",
+  "category": "Malware",
+  "severity": "high",
+  "detection_timestamp": 1779974400000,
+  "mitre_technique_id_and_name": "T1059.001 - PowerShell",
+  "host_name": "BROKEN-WS-001"
+}

@@ -1,0 +1,19 @@
+{
+  "recordid": "ZIA-7710902",
+  "epochtime": 1779986700,
+  "action": "Allowed",
+  "reason": "Policy allowed with caution",
+  "url": "https://proxy.example.invalid/relay",
+  "host": "proxy.example.invalid",
+  "urlcategory": "Anonymizer",
+  "threatcategory": "None",
+  "riskscore": 25,
+  "clientip": "10.70.8.140",
+  "cip": "10.70.8.140",
+  "serverip": "192.0.2.211",
+  "user": "acme\\guest.kiosk",
+  "department": "Guest",
+  "location": "HQ-Branch",
+  "appname": "Web Proxy",
+  "ruletype": "URL Filtering"
+}

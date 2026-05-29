@@ -1,0 +1,82 @@
+{
+  "activity_id": 1,
+  "activity_name": "Create",
+  "category_name": "Findings",
+  "category_uid": 2,
+  "class_name": "Detection Finding",
+  "class_uid": 2004,
+  "confidence_id": 3,
+  "evidences": [
+    {
+      "dst_endpoint": {
+        "ip": "203.0.113.222",
+        "port": 443
+      },
+      "name": "Malicious document with embedded macro",
+      "src_endpoint": {
+        "ip": "10.80.2.30"
+      }
+    }
+  ],
+  "finding_info": {
+    "created_time": 1779972600000,
+    "desc": "Document contained an auto-executing macro downloading a second-stage payload.",
+    "title": "Malicious document with embedded macro",
+    "types": [
+      "Threat Prevention - Strict"
+    ],
+    "uid": "8a7b6c5d-4e3f-2a1b-0c9d-8e7f6a5b4c3d"
+  },
+  "is_alert": true,
+  "message": "Document contained an auto-executing macro downloading a second-stage payload.",
+  "metadata": {
+    "log_name": "checkpoint",
+    "original_time": "2026-05-28T12:50:00Z",
+    "product": {
+      "name": "Threat Emulation",
+      "vendor_name": "Check Point"
+    },
+    "version": "1.8.0"
+  },
+  "observables": [
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "10.80.2.30"
+    },
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "203.0.113.222"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "cp-gw-edge-01"
+    },
+    {
+      "name": "User Name",
+      "type_id": 4,
+      "value": "acme\\v.popescu"
+    },
+    {
+      "name": "Malware Family",
+      "type_id": 99,
+      "value": "Emotet"
+    },
+    {
+      "name": "Protection Name",
+      "type_id": 99,
+      "value": "Malicious document with embedded macro"
+    }
+  ],
+  "raw_data": "{\"action\":\"Prevent\",\"attack_info\":\"Document contained an auto-executing macro downloading a second-stage payload.\",\"confidence_level\":3,\"dst\":\"203.0.113.222\",\"malware_action\":\"Malicious file emulated and blocked\",\"malware_family\":\"Emotet\",\"origin\":\"cp-gw-edge-01\",\"policy_name\":\"Standard Threat Policy\",\"product\":\"Threat Emulation\",\"protection_name\":\"Malicious document with embedded macro\",\"proto\":\"tcp\",\"rule_name\":\"Threat Prevention - Strict\",\"rule_uid\":\"8a7b6c5d-4e3f-2a1b-0c9d-8e7f6a5b4c3d\",\"service\":443,\"severity\":\"Critical\",\"smartdefense_profile\":\"Optimized\",\"src\":\"10.80.2.30\",\"src_user_name\":\"acme\\\\v.popescu\",\"time\":1779972600,\"uuid\":\"cp-3f2a1b0c-9d8e-4716-a5b4-c3d2e1f0a9b8\"}",
+  "severity": "Critical",
+  "severity_id": 5,
+  "status": "New",
+  "status_id": 1,
+  "time": 1779972600000,
+  "time_dt": "2026-05-28T12:50:00Z",
+  "type_name": "Detection Finding: Create",
+  "type_uid": 200401
+}

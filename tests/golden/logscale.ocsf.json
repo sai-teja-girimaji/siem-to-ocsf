@@ -1,0 +1,93 @@
+{
+  "activity_id": 1,
+  "activity_name": "Create",
+  "category_name": "Findings",
+  "category_uid": 2,
+  "class_name": "Detection Finding",
+  "class_uid": 2004,
+  "evidences": [
+    {
+      "dst_endpoint": {
+        "ip": "198.51.100.140",
+        "port": 8443
+      },
+      "name": "Beaconing to suspected C2 infrastructure",
+      "src_endpoint": {
+        "ip": "10.60.2.55"
+      }
+    }
+  ],
+  "finding_info": {
+    "attacks": [
+      {
+        "tactic": {
+          "name": "Command and Control",
+          "uid": "TA0011"
+        },
+        "technique": {
+          "name": "Web Protocols",
+          "uid": "T1071.001"
+        }
+      }
+    ],
+    "created_time": 1779971460000,
+    "desc": "A host exhibited periodic outbound connections with low-variance intervals to an uncategorised external IP, consistent with C2 beaconing.",
+    "title": "Beaconing to suspected C2 infrastructure",
+    "types": [
+      "falcon_detections"
+    ],
+    "uid": "LS-DET-90017"
+  },
+  "is_alert": true,
+  "message": "A host exhibited periodic outbound connections with low-variance intervals to an uncategorised external IP, consistent with C2 beaconing.",
+  "metadata": {
+    "log_name": "logscale",
+    "original_time": "2026-05-28T12:31:00Z",
+    "product": {
+      "name": "Falcon LogScale",
+      "vendor_name": "CrowdStrike"
+    },
+    "version": "1.8.0"
+  },
+  "observables": [
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "10.60.2.55"
+    },
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "198.51.100.140"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "eng-ws-204"
+    },
+    {
+      "name": "User Name",
+      "type_id": 4,
+      "value": "acme\\r.delacruz"
+    },
+    {
+      "name": "SHA-256",
+      "type_id": 8,
+      "value": "5d7f9a1c3e5079b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2a4c6e8b0"
+    },
+    {
+      "name": "File Name",
+      "type_id": 7,
+      "value": "svchost-update.exe"
+    }
+  ],
+  "raw_data": "{\"#repo\":\"falcon_detections\",\"@id\":\"ls_8c1f0a2b3c4d5e6f\",\"@timestamp\":1779971460000,\"alert.description\":\"A host exhibited periodic outbound connections with low-variance intervals to an uncategorised external IP, consistent with C2 beaconing.\",\"alert.id\":\"LS-DET-90017\",\"alert.name\":\"Beaconing to suspected C2 infrastructure\",\"destination.ip\":\"198.51.100.140\",\"destination.port\":8443,\"event.kind\":\"alert\",\"file.hash.sha256\":\"5d7f9a1c3e5079b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2a4c6e8b0\",\"file.name\":\"svchost-update.exe\",\"host.name\":\"eng-ws-204\",\"severity\":88,\"source.ip\":\"10.60.2.55\",\"threat.tactic.id\":\"TA0011\",\"threat.tactic.name\":\"Command and Control\",\"threat.technique.id\":\"T1071.001\",\"threat.technique.name\":\"Web Protocols\",\"user.name\":\"acme\\\\r.delacruz\"}",
+  "severity": "Critical",
+  "severity_id": 5,
+  "status": "New",
+  "status_id": 1,
+  "time": 1779971460000,
+  "time_dt": "2026-05-28T12:31:00Z",
+  "type_name": "Detection Finding: Create",
+  "type_uid": 200401
+}

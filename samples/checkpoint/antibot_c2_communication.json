@@ -1,0 +1,20 @@
+{
+  "uuid": "cp-1a2b3c4d-5e6f-4807-9a1b-2c3d4e5f6a7b",
+  "time": 1779980700,
+  "product": "Anti-Bot",
+  "action": "Detect",
+  "severity": "High",
+  "confidence_level": 2,
+  "protection_name": "Generic.Botnet.C2.Communication",
+  "malware_family": "Qakbot",
+  "attack_info": "Host communicated with a known command-and-control server.",
+  "src": "10.80.6.91",
+  "dst": "198.51.100.205",
+  "service": 80,
+  "proto": "tcp",
+  "rule_name": "Anti-Bot Policy",
+  "rule_uid": "2b3c4d5e-6f70-1a2b-3c4d-5e6f70819a2b",
+  "smartdefense_profile": "Optimized",
+  "origin": "cp-gw-dc-02",
+  "src_user_name": "acme\\n.haddad"
+}

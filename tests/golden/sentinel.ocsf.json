@@ -1,0 +1,80 @@
+{
+  "activity_id": 1,
+  "activity_name": "Create",
+  "category_name": "Findings",
+  "category_uid": 2,
+  "class_name": "Detection Finding",
+  "class_uid": 2004,
+  "evidences": [
+    {
+      "name": "Impossible travel activity",
+      "src_endpoint": {
+        "ip": "203.0.113.77"
+      }
+    }
+  ],
+  "finding_info": {
+    "attacks": [
+      {
+        "tactic": {
+          "name": "InitialAccess"
+        },
+        "technique": {
+          "uid": "T1078.004"
+        }
+      },
+      {
+        "tactic": {
+          "name": "CredentialAccess"
+        },
+        "technique": {
+          "uid": "T1110"
+        }
+      }
+    ],
+    "created_time": 1779978125000,
+    "desc": "Sign-ins for a single account originated from two geographically distant locations within a time window shorter than feasible travel.",
+    "title": "Impossible travel activity",
+    "types": [
+      "ImpossibleTravel"
+    ],
+    "uid": "f0e1d2c3-b4a5-4968-8c7d-1e2f3a4b5c6d"
+  },
+  "is_alert": true,
+  "message": "Sign-ins for a single account originated from two geographically distant locations within a time window shorter than feasible travel.",
+  "metadata": {
+    "log_name": "sentinel",
+    "original_time": "2026-05-28T14:22:05Z",
+    "product": {
+      "name": "Microsoft Sentinel",
+      "vendor_name": "Microsoft"
+    },
+    "version": "1.8.0"
+  },
+  "observables": [
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "203.0.113.77"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "sales-lt-009"
+    },
+    {
+      "name": "User Name",
+      "type_id": 4,
+      "value": "acme\\a.lindqvist"
+    }
+  ],
+  "raw_data": "{\"AlertName\":\"Impossible travel activity\",\"AlertSeverity\":\"Medium\",\"AlertType\":\"ImpossibleTravel\",\"CompromisedEntity\":\"acme\\\\a.lindqvist\",\"Description\":\"Sign-ins for a single account originated from two geographically distant locations within a time window shorter than feasible travel.\",\"Entities\":[{\"NTDomain\":\"acme\",\"Name\":\"a.lindqvist\",\"Type\":\"account\"},{\"Address\":\"203.0.113.77\",\"Type\":\"ip\"},{\"HostName\":\"sales-lt-009\",\"Type\":\"host\"}],\"ProductName\":\"Microsoft Sentinel\",\"ProviderName\":\"Microsoft Entra ID Protection\",\"StartTime\":\"2026-05-28T13:50:00Z\",\"Status\":\"New\",\"SystemAlertId\":\"f0e1d2c3-b4a5-4968-8c7d-1e2f3a4b5c6d\",\"Tactics\":[\"InitialAccess\",\"CredentialAccess\"],\"Techniques\":[\"T1078.004\",\"T1110\"],\"TimeGenerated\":\"2026-05-28T14:22:05Z\",\"VendorName\":\"Microsoft\"}",
+  "severity": "Medium",
+  "severity_id": 3,
+  "status": "New",
+  "status_id": 1,
+  "time": 1779978125000,
+  "time_dt": "2026-05-28T14:22:05Z",
+  "type_name": "Detection Finding: Create",
+  "type_uid": 200401
+}

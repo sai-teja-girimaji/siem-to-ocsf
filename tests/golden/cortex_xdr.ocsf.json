@@ -1,0 +1,94 @@
+{
+  "activity_id": 1,
+  "activity_name": "Create",
+  "category_name": "Findings",
+  "category_uid": 2,
+  "class_name": "Detection Finding",
+  "class_uid": 2004,
+  "evidences": [
+    {
+      "dst_endpoint": {
+        "ip": "203.0.113.45",
+        "port": 443
+      },
+      "name": "Suspicious PowerShell download cradle",
+      "src_endpoint": {
+        "ip": "10.20.14.37",
+        "port": 50231
+      }
+    }
+  ],
+  "finding_info": {
+    "attacks": [
+      {
+        "tactic": {
+          "name": "Execution",
+          "uid": "TA0002"
+        },
+        "technique": {
+          "name": "PowerShell",
+          "uid": "T1059.001"
+        }
+      }
+    ],
+    "created_time": 1779974400000,
+    "desc": "PowerShell process invoked a remote download cradle using DownloadString from an external host.",
+    "title": "Suspicious PowerShell download cradle",
+    "types": [
+      "Malware"
+    ],
+    "uid": "CRTX-100481"
+  },
+  "is_alert": true,
+  "message": "Detected (Reported)",
+  "metadata": {
+    "log_name": "cortex_xdr",
+    "original_time": "2026-05-28T13:20:00Z",
+    "product": {
+      "name": "Cortex XDR",
+      "vendor_name": "Palo Alto Networks"
+    },
+    "version": "1.8.0"
+  },
+  "observables": [
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "10.20.14.37"
+    },
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "203.0.113.45"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "FIN-WS-014"
+    },
+    {
+      "name": "User Name",
+      "type_id": 4,
+      "value": "acme\\j.harper"
+    },
+    {
+      "name": "SHA-256",
+      "type_id": 8,
+      "value": "9f2c4e6a8b0d1f3a5c7e9b1d3f5a7c9e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a"
+    },
+    {
+      "name": "File Name",
+      "type_id": 7,
+      "value": "payload.ps1"
+    }
+  ],
+  "raw_data": "{\"action\":\"DETECTED\",\"action_file_name\":\"payload.ps1\",\"action_file_sha256\":\"9f2c4e6a8b0d1f3a5c7e9b1d3f5a7c9e0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a\",\"action_local_ip\":\"10.20.14.37\",\"action_local_port\":50231,\"action_pretty\":\"Detected (Reported)\",\"action_remote_ip\":\"203.0.113.45\",\"action_remote_port\":443,\"agent_id\":\"a91f0c2e7b4d4e1c9f0a2b3c4d5e6f70\",\"alert_id\":\"CRTX-100481\",\"category\":\"Malware\",\"causality_actor_process_image_name\":\"powershell.exe\",\"description\":\"PowerShell process invoked a remote download cradle using DownloadString from an external host.\",\"detection_timestamp\":1779974400000,\"host_ip\":\"10.20.14.37\",\"host_name\":\"FIN-WS-014\",\"mitre_tactic_id_and_name\":\"TA0002 - Execution\",\"mitre_technique_id_and_name\":\"T1059.001 - PowerShell\",\"name\":\"Suspicious PowerShell download cradle\",\"severity\":\"high\",\"source\":\"XDR Analytics\",\"starred\":false,\"user_name\":\"acme\\\\j.harper\"}",
+  "severity": "High",
+  "severity_id": 4,
+  "status": "New",
+  "status_id": 1,
+  "time": 1779974400000,
+  "time_dt": "2026-05-28T13:20:00Z",
+  "type_name": "Detection Finding: Create",
+  "type_uid": 200401
+}

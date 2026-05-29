@@ -1,0 +1,17 @@
+{
+  "#repo": "falcon_detections",
+  "@timestamp": 1779991800000,
+  "@id": "ls_a3b4c5d6e7f80910",
+  "alert.id": "LS-DET-90073",
+  "alert.name": "Local privilege escalation via token manipulation",
+  "alert.description": "A process duplicated a SYSTEM access token to elevate privileges outside of normal administrative tooling.",
+  "severity": 45,
+  "event.kind": "alert",
+  "host.name": "dev-srv-12",
+  "user.name": "acme\\b.iqbal",
+  "source.ip": "10.60.11.9",
+  "threat.tactic.id": "TA0004",
+  "threat.tactic.name": "Privilege Escalation",
+  "threat.technique.id": "T1134.001",
+  "threat.technique.name": "Token Impersonation/Theft"
+}

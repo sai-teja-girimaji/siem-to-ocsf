@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siem-to-ocsf"
+version = "0.1.0"
+description = "Normalise security alerts from six SIEM/vendor formats into the OCSF Detection Finding schema."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+authors = [{ name = "Sai Teja Girimaji" }]
+keywords = ["ocsf", "siem", "detection-engineering", "normalization", "security-lake"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+dependencies = [
+    "pydantic>=2.6,<3",
+    "jsonschema>=4.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+siem-to-ocsf = "siem_to_ocsf.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sai-teja-girimaji/siem-to-ocsf"
+"OCSF Schema" = "https://schema.ocsf.io"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+siem_to_ocsf = ["schema/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "W", "C4", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

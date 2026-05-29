@@ -1,0 +1,21 @@
+{
+  "SystemAlertId": "f0e1d2c3-b4a5-4968-8c7d-1e2f3a4b5c6d",
+  "AlertName": "Impossible travel activity",
+  "AlertType": "ImpossibleTravel",
+  "Description": "Sign-ins for a single account originated from two geographically distant locations within a time window shorter than feasible travel.",
+  "AlertSeverity": "Medium",
+  "TimeGenerated": "2026-05-28T14:22:05Z",
+  "StartTime": "2026-05-28T13:50:00Z",
+  "VendorName": "Microsoft",
+  "ProductName": "Microsoft Sentinel",
+  "ProviderName": "Microsoft Entra ID Protection",
+  "Status": "New",
+  "CompromisedEntity": "acme\\a.lindqvist",
+  "Tactics": ["InitialAccess", "CredentialAccess"],
+  "Techniques": ["T1078.004", "T1110"],
+  "Entities": [
+    {"Type": "account", "Name": "a.lindqvist", "NTDomain": "acme"},
+    {"Type": "ip", "Address": "203.0.113.77"},
+    {"Type": "host", "HostName": "sales-lt-009"}
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "activity_id": 1,
+  "activity_name": "Create",
+  "category_name": "Findings",
+  "category_uid": 2,
+  "class_name": "Detection Finding",
+  "class_uid": 2004,
+  "evidences": [
+    {
+      "dst_endpoint": {
+        "hostname": "linux-bastion-01",
+        "ip": "10.50.4.12",
+        "port": 22
+      },
+      "name": "SSH brute force attack against Linux host",
+      "src_endpoint": {
+        "hostname": "unknown-ext",
+        "ip": "198.51.100.23"
+      }
+    }
+  ],
+  "finding_info": {
+    "attacks": [
+      {
+        "tactic": {
+          "name": "Credential Access",
+          "uid": "TA0006"
+        },
+        "technique": {
+          "name": "Password Guessing",
+          "uid": "T1110.001"
+        }
+      }
+    ],
+    "created_time": 1779966000000,
+    "desc": "More than 50 failed SSH authentications from a single source within 5 minutes.",
+    "title": "SSH brute force attack against Linux host",
+    "types": [
+      "Excessive Failed SSH Logins"
+    ],
+    "uid": "PH_RULE_SSH_BRUTE_FORCE"
+  },
+  "is_alert": true,
+  "message": "More than 50 failed SSH authentications from a single source within 5 minutes.",
+  "metadata": {
+    "log_name": "fortisiem",
+    "original_time": "2026-05-28T11:00:00Z",
+    "product": {
+      "name": "FortiSIEM",
+      "vendor_name": "Fortinet"
+    },
+    "version": "1.8.0"
+  },
+  "observables": [
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "198.51.100.23"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "unknown-ext"
+    },
+    {
+      "name": "IP Address",
+      "type_id": 2,
+      "value": "10.50.4.12"
+    },
+    {
+      "name": "Hostname",
+      "type_id": 1,
+      "value": "linux-bastion-01"
+    },
+    {
+      "name": "User Name",
+      "type_id": 4,
+      "value": "root"
+    }
+  ],
+  "raw_data": "{\"attackTactic\":\"TA0006 - Credential Access\",\"attackTechnique\":\"T1110.001 - Password Guessing\",\"count\":78,\"destIpAddr\":\"10.50.4.12\",\"destIpPort\":22,\"destName\":\"linux-bastion-01\",\"eventType\":\"SSH_Authentication_Failure\",\"hostName\":\"linux-bastion-01\",\"incidentFirstSeen\":1779966000000,\"incidentId\":\"FSM-2026-44120\",\"incidentLastSeen\":1779966300000,\"incidentSeverity\":9,\"incidentStatus\":\"Active\",\"incidentTitle\":\"SSH brute force attack against Linux host\",\"phEventCategory\":\"Security\",\"ruleDescription\":\"More than 50 failed SSH authentications from a single source within 5 minutes.\",\"ruleId\":\"PH_RULE_SSH_BRUTE_FORCE\",\"ruleName\":\"Excessive Failed SSH Logins\",\"srcIpAddr\":\"198.51.100.23\",\"srcName\":\"unknown-ext\",\"user\":\"root\"}",
+  "severity": "High",
+  "severity_id": 4,
+  "status": "New",
+  "status_id": 1,
+  "time": 1779966000000,
+  "time_dt": "2026-05-28T11:00:00Z",
+  "type_name": "Detection Finding: Create",
+  "type_uid": 200401
+}

@@ -1,0 +1,21 @@
+{
+  "#repo": "falcon_detections",
+  "@timestamp": 1779971460000,
+  "@id": "ls_8c1f0a2b3c4d5e6f",
+  "alert.id": "LS-DET-90017",
+  "alert.name": "Beaconing to suspected C2 infrastructure",
+  "alert.description": "A host exhibited periodic outbound connections with low-variance intervals to an uncategorised external IP, consistent with C2 beaconing.",
+  "severity": 88,
+  "event.kind": "alert",
+  "host.name": "eng-ws-204",
+  "user.name": "acme\\r.delacruz",
+  "source.ip": "10.60.2.55",
+  "destination.ip": "198.51.100.140",
+  "destination.port": 8443,
+  "threat.tactic.id": "TA0011",
+  "threat.tactic.name": "Command and Control",
+  "threat.technique.id": "T1071.001",
+  "threat.technique.name": "Web Protocols",
+  "file.name": "svchost-update.exe",
+  "file.hash.sha256": "5d7f9a1c3e5079b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2a4c6e8b0"
+}

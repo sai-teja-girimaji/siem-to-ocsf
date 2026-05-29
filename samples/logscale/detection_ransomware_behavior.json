@@ -1,0 +1,19 @@
+{
+  "#repo": "falcon_detections",
+  "@timestamp": 1779982020000,
+  "@id": "ls_9d2e1f0a3b4c5d6e",
+  "alert.id": "LS-DET-90042",
+  "alert.name": "Ransomware-like mass file encryption",
+  "alert.description": "A process rapidly renamed and rewrote a large number of files with a uniform extension, consistent with ransomware encryption activity.",
+  "severity": 96,
+  "event.kind": "alert",
+  "host.name": "fs-node-03",
+  "user.name": "acme\\svc.backup",
+  "source.ip": "10.60.7.18",
+  "threat.tactic.id": "TA0040",
+  "threat.tactic.name": "Impact",
+  "threat.technique.id": "T1486",
+  "threat.technique.name": "Data Encrypted for Impact",
+  "file.name": "readme_restore.txt",
+  "file.hash.sha256": "0b2d4f6a8c0e2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c8e0b2d"
+}

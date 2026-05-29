@@ -1,0 +1,22 @@
+{
+  "incidentId": "FSM-2026-44205",
+  "incidentTitle": "Large outbound data transfer to external host",
+  "ruleId": "PH_RULE_DATA_EXFIL",
+  "ruleName": "Anomalous Outbound Data Volume",
+  "ruleDescription": "An internal host transferred more than 5 GB to a single external destination over HTTPS.",
+  "incidentSeverity": 3,
+  "incidentStatus": "Active",
+  "phEventCategory": "Security",
+  "eventType": "Net_Flow_Anomaly",
+  "incidentFirstSeen": 1779984600000,
+  "count": 1,
+  "srcIpAddr": "10.50.12.40",
+  "srcName": "eng-ws-118",
+  "destIpAddr": "192.0.2.88",
+  "destName": "unknown-ext",
+  "destIpPort": 443,
+  "hostName": "eng-ws-118",
+  "user": "acme\\p.nguyen",
+  "attackTactic": "TA0010 - Exfiltration",
+  "attackTechnique": "T1048.002 - Exfiltration Over Asymmetric Encrypted Non-C2 Protocol"
+}

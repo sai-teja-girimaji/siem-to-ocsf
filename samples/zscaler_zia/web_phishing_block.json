@@ -1,0 +1,20 @@
+{
+  "recordid": "ZIA-7710518",
+  "epochtime": 1779977400,
+  "action": "Blocked",
+  "reason": "Known phishing page",
+  "url": "https://login.acme-sso.example.invalid/verify",
+  "host": "login.acme-sso.example.invalid",
+  "urlcategory": "Phishing",
+  "threatname": "Phishing.Credential.Harvest",
+  "threatcategory": "Phishing",
+  "riskscore": 74,
+  "clientip": "172.20.5.66",
+  "cip": "172.20.5.66",
+  "serverip": "198.51.100.61",
+  "user": "acme\\l.moreau",
+  "department": "Sales",
+  "location": "Remote-VPN",
+  "appname": "General Browsing",
+  "ruletype": "URL Filtering"
+}

@@ -1,0 +1,5 @@
+{
+  "some_vendor_specific_field": "this record matches no registered parser",
+  "alarm_text": "unrecognised schema",
+  "level": 5
+}

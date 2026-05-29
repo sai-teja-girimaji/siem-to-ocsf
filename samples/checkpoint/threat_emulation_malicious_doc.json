@@ -1,0 +1,22 @@
+{
+  "uuid": "cp-3f2a1b0c-9d8e-4716-a5b4-c3d2e1f0a9b8",
+  "time": 1779972600,
+  "product": "Threat Emulation",
+  "action": "Prevent",
+  "severity": "Critical",
+  "confidence_level": 3,
+  "protection_name": "Malicious document with embedded macro",
+  "malware_family": "Emotet",
+  "malware_action": "Malicious file emulated and blocked",
+  "attack_info": "Document contained an auto-executing macro downloading a second-stage payload.",
+  "src": "10.80.2.30",
+  "dst": "203.0.113.222",
+  "service": 443,
+  "proto": "tcp",
+  "rule_name": "Threat Prevention - Strict",
+  "rule_uid": "8a7b6c5d-4e3f-2a1b-0c9d-8e7f6a5b4c3d",
+  "smartdefense_profile": "Optimized",
+  "policy_name": "Standard Threat Policy",
+  "origin": "cp-gw-edge-01",
+  "src_user_name": "acme\\v.popescu"
+}

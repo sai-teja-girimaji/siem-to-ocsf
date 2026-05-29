@@ -1,0 +1,23 @@
+{
+  "alert_id": "CRTX-100537",
+  "name": "Internal network port scan",
+  "category": "Discovery",
+  "description": "A workstation initiated connections to many internal hosts across sequential ports in a short window.",
+  "severity": "medium",
+  "detection_timestamp": 1779997230000,
+  "source": "XDR Analytics",
+  "action": "DETECTED",
+  "action_pretty": "Detected (Reported)",
+  "agent_id": "f10a2b3c4d5e6f708192a3b4c5d6e7f8",
+  "host_name": "IT-LT-022",
+  "host_ip": "10.20.30.40",
+  "user_name": "acme\\svc.scanner",
+  "causality_actor_process_image_name": "nmap.exe",
+  "action_local_ip": "10.20.30.40",
+  "action_local_port": 51544,
+  "action_remote_ip": "10.20.30.1",
+  "action_remote_port": 445,
+  "mitre_tactic_id_and_name": "TA0007 - Discovery",
+  "mitre_technique_id_and_name": "T1046 - Network Service Discovery",
+  "starred": false
+}
