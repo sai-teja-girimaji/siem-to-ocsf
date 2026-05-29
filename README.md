@@ -4,7 +4,7 @@ Normalise security alerts from six SIEM/vendor formats into a single
 [OCSF](https://schema.ocsf.io) schema so heterogeneous detections can be correlated on
 one common model.
 
-Every SIEM and security product emits alerts in its own shape — different field names,
+Every SIEM and security product emits alerts in its own shape different field names,
 different severity scales, different nesting. That makes cross-tool correlation painful:
 a "high" in one tool is a `9` in another and a `riskscore: 88` in a third, and the same
 host is `host_name` here, `ComputerName` there, and an `Entities[]` array somewhere else.
