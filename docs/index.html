@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>siem-to-ocsf — live OCSF normalisation demo</title>
+  <meta name="description" content="Paste a raw SIEM/vendor alert and watch it normalise into a validated OCSF 1.8.0 Detection Finding, entirely in your browser." />
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Ajv 6 (draft-07 JSON Schema validator). If the CDN is blocked, the demo still
+       maps alerts; only the schema-validation badge is skipped. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.6/ajv.min.js"
+          integrity="sha512-+WCxUYg8L1mFBIyL05WJAJRP2UWCy+6mvpMHQbjPDdlDVcgS4XYyPhw5TVvzf9Dq8DTD/BedPW5745dqUeIP5g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>siem&#8209;to&#8209;ocsf</h1>
+      <span class="badge">OCSF 1.8.0 · Detection Finding (class_uid 2004)</span>
+    </div>
+    <a class="repo-link" href="https://github.com/sai-teja-girimaji/siem-to-ocsf" target="_blank" rel="noopener">View on GitHub ↗</a>
+  </header>
+
+  <p class="lede">
+    Every SIEM speaks its own dialect. Paste a raw alert from any of six vendors below
+    (or load a sample) and watch it normalise into a single, schema&#8209;validated OCSF
+    <em>Detection Finding</em> — all in your browser. This is a JavaScript port of the
+    <a href="https://github.com/sai-teja-girimaji/siem-to-ocsf" target="_blank" rel="noopener">Python tool</a>;
+    it validates output against the official, vendored OCSF&nbsp;1.8.0 JSON Schema.
+  </p>
+
+  <main>
+    <section class="panel" id="input-panel">
+      <div class="panel-head">
+        <h2>Raw vendor alert</h2>
+        <span id="raw-fieldcount" class="fieldcount"></span>
+      </div>
+
+      <div class="presets" id="presets"></div>
+
+      <div class="controls">
+        <label for="source">Source</label>
+        <select id="source">
+          <option value="auto">Auto-detect</option>
+          <option value="cortex_xdr">Cortex XDR</option>
+          <option value="fortisiem">FortiSIEM</option>
+          <option value="sentinel">Microsoft Sentinel</option>
+          <option value="logscale">CrowdStrike LogScale</option>
+          <option value="zscaler_zia">Zscaler ZIA</option>
+          <option value="checkpoint">Check Point</option>
+        </select>
+        <label class="check"><input type="checkbox" id="enrich" checked /> enrichment</label>
+        <button id="run">Normalise →</button>
+      </div>
+
+      <textarea id="input" spellcheck="false" placeholder="Paste a raw JSON alert, or pick a sample above…"></textarea>
+    </section>
+
+    <section class="panel" id="output-panel">
+      <div class="panel-head">
+        <h2>OCSF Detection Finding</h2>
+        <span id="ocsf-fieldcount" class="fieldcount"></span>
+      </div>
+
+      <div id="badges" class="badges"></div>
+      <pre id="output" class="output"><span class="muted">Output appears here.</span></pre>
+      <button id="copy" class="copy" hidden>Copy JSON</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      All sample data is synthetic (RFC&nbsp;5737 / RFC&nbsp;1918 ranges, <code>.example</code>/<code>.invalid</code> domains).
+      No real logs, hosts, or organisations. Schema: <a href="https://schema.ocsf.io/1.8.0/classes/detection_finding" target="_blank" rel="noopener">OCSF 1.8.0 Detection Finding</a>.
+    </p>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

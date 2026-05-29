@@ -4,6 +4,11 @@ Normalise security alerts from six SIEM/vendor formats into a single
 [OCSF](https://schema.ocsf.io) schema so heterogeneous detections can be correlated on
 one common model.
 
+**▶ Live demo: https://sai-teja-girimaji.github.io/siem-to-ocsf/** — paste a raw alert
+from any of the six vendors and watch it normalise into a schema-validated OCSF Detection
+Finding, entirely in your browser. (The demo is a JS port of this tool; it validates
+output against the same official, vendored OCSF 1.8.0 schema.)
+
 Every SIEM and security product emits alerts in its own shape different field names,
 different severity scales, different nesting. That makes cross-tool correlation painful:
 a "high" in one tool is a `9` in another and a `riskscore: 88` in a third, and the same

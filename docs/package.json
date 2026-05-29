@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Marks the docs/ demo sources as ES modules. Not published; GitHub Pages serves these files statically."
+}
