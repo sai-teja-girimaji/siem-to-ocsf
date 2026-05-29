@@ -11,6 +11,11 @@ import {
 } from "./ocsf-core.js";
 import { SAMPLES } from "./samples.js";
 
+const SAMPLE_BY_ID = Object.fromEntries(SAMPLES.map((s) => [s.id, s]));
+// Tracks the exact text of the last sample we injected, so we can tell an
+// unmodified preset apart from a custom alert the user pasted in.
+let loadedSampleText = null;
+
 const $ = (id) => document.getElementById(id);
 const els = {
   presets: $("presets"),
@@ -149,19 +154,47 @@ function normalise() {
 
 // --- init -------------------------------------------------------------------
 
+// Inject a sample into the input box and normalise it. `sourceValue` controls
+// what the Source dropdown shows ("auto" for presets to demo auto-detection;
+// the sample's own id when the dropdown drove the load).
+function loadSample(sample, sourceValue) {
+  const text = JSON.stringify(sample.raw, null, 2);
+  els.input.value = text;
+  loadedSampleText = text;
+  els.source.value = sourceValue;
+  els.rawCount.textContent = `${Object.keys(sample.raw).length} fields`;
+  normalise();
+}
+
+// Is the box still showing an unmodified sample (or empty)? If so it's safe to
+// swap in a different sample; if the user typed their own alert we leave it be.
+function inputIsUnmodifiedSample() {
+  const v = els.input.value.trim();
+  return v === "" || els.input.value === loadedSampleText;
+}
+
 function buildPresets() {
   for (const s of SAMPLES) {
     const b = document.createElement("button");
     b.textContent = s.label;
-    b.addEventListener("click", () => {
-      els.input.value = JSON.stringify(s.raw, null, 2);
-      els.source.value = "auto";
-      els.rawCount.textContent = `${Object.keys(s.raw).length} fields`;
-      normalise();
-    });
+    b.addEventListener("click", () => loadSample(s, "auto"));
     els.presets.appendChild(b);
   }
 }
+
+// Changing the vendor should "just work": if the box holds an unmodified
+// sample, load the picked vendor's matching sample so it normalises cleanly
+// instead of force-parsing leftover data from another vendor. If the user
+// pasted custom data, respect it and just re-parse with the chosen parser.
+els.source.addEventListener("change", () => {
+  const picked = els.source.value;
+  const sample = SAMPLE_BY_ID[picked];
+  if (sample && inputIsUnmodifiedSample()) {
+    loadSample(sample, picked);
+  } else {
+    normalise();
+  }
+});
 
 els.run.addEventListener("click", normalise);
 els.input.addEventListener("keydown", (e) => {
